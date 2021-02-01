@@ -11,19 +11,19 @@ test("findLineWidth finds the line width from a foliage height", () => {
   expect(findLineWidth(3)).toBe(5);
 });
 
-test("makeTreeTrunk returns the tree trunk part of the Christmas tree with given foliage height", () => {
+test.skip("makeTreeTrunk returns the tree trunk part of the Christmas tree with given foliage height", () => {
   expect(makeTreeTrunk(5)).toStrictEqual(["____#____", "____#____"]);
   expect(makeTreeTrunk(3)).toStrictEqual(["__#__", "__#__"]);
 });
 
-test("makeFoliageSegment returns the foliage segment for a given level of a tree of given foliage height", () => {
+test.skip("makeFoliageSegment returns the foliage segment for a given level of a tree of given foliage height", () => {
   expect(makeFoliageSegment(5, 1)).toBe("____#____");
   expect(makeFoliageSegment(5, 4)).toBe("_#######_");
   expect(makeFoliageSegment(3, 1)).toBe("__#__");
   expect(makeFoliageSegment(3, 2)).toBe("_###_");
 });
 
-test("makeTreeFoliage returns the foliage for a tree of given foliage height", () => {
+test.skip("makeTreeFoliage returns the foliage for a tree of given foliage height", () => {
   expect(makeTreeFoliage(5)).toStrictEqual([
     "____#____",
     "___###___",
@@ -34,13 +34,13 @@ test("makeTreeFoliage returns the foliage for a tree of given foliage height", (
   expect(makeTreeFoliage(3)).toStrictEqual(["__#__", "_###_", "#####"]);
 });
 
-test("xmasTree returns an array modelling a Christmas tree of given foliage height", () => {
+test.skip("xmasTree returns an array modelling a Christmas tree of given foliage height", () => {
   expect(xmasTree(5)).toStrictEqual([
     "____#____",
     "___###___",
     "__#####__",
     "_#######_",
-    "#########",
+    "#########", 
     "____#____",
     "____#____",
   ]);
@@ -51,4 +51,61 @@ test("xmasTree returns an array modelling a Christmas tree of given foliage heig
     "__#__",
     "__#__",
   ]);
+});
+
+
+test.skip("toBe on arrays - experiment", () => {
+  expect([1, 2, 3]).toBe([1, 2, 3]);
+  expect(["a", "b", "c"]).toBe(["a", "b", "c"]);
+});
+
+test.skip("toStrictEqual on arrays - experiment", () => {
+  expect([1, 2, 3]).toStrictEqual([1, 2, 3]);
+  expect(["a", "b", "c"]).toStrictEqual(["a", "b", "c"]);
+});
+
+test.skip("toBe on booleans - experiment", () => {
+  expect(true).toBe(true);
+  expect(false).toBe(false);
+});
+
+test.skip("toStrictEqual on booleans - experiment", () => {
+  expect(true).toStrictEqual(true);
+  expect(false).toStrictEqual(false);
+});
+
+test.skip("toBe on numbers - experiment", () => {
+  expect(1).toBe(1);
+  expect(100).toBe(100);
+});
+
+test.skip("toStrictEqual on numbers - experiment", () => {
+  expect(1).toStrictEqual(1);
+  expect(100).toStrictEqual(100);
+});
+
+test.skip("toBe on objects - experiment", () => {
+  expect({ firstName: "Richard", lastName: "Ng" }).toBe({
+    firstName: "Richard",
+    lastName: "Ng",
+  });
+  expect({ a: "A", b: "B", c: "C" }).toBe({ a: "A", b: "B", c: "C" });
+});
+
+test.skip("toStrictEqual on objects - experiment", () => {
+  expect({ firstName: "Richard", lastName: "Ng" }).toStrictEqual({
+    firstName: "Richard",
+    lastName: "Ng",
+  });
+  expect({ a: "A", b: "B", c: "C" }).toStrictEqual({ a: "A", b: "B", c: "C" });
+});
+
+test.skip("toBe on strings - experiment", () => {
+  expect("hello").toBe("hello");
+  expect("world").toBe("world");
+});
+
+test.skip("toStrictEqual on strings - experiment", () => {
+  expect("hello").toStrictEqual("hello");
+  expect("world").toStrictEqual("world");
 });

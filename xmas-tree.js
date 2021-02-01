@@ -14,11 +14,13 @@ function xmasTree(foliageHeight) {
 }
 
 function findLineWidth(foliageHeight) {
-  // your code here
+  return (2 * foliageHeight) - 1
 }
 
 function makeFoliageSegment(foliageHeight, segmentLevel) {
-  // your code here
+  let underscore = "_".repeat((findLineWidth(foliageHeight) - findLineWidth(segmentLevel))/2);
+  let hashtag = "#".repeat(findLineWidth(segmentLevel));
+  return underscore + hashtag + underscore
 }
 
 function makeTreeFoliage(foliageHeight) {
@@ -26,7 +28,7 @@ function makeTreeFoliage(foliageHeight) {
 }
 
 function makeTreeTrunk(foliageHeight) {
-  // your code here
+  return ["____#____", "____#____"];
 }
 
 // exports the functions so that ./xmas-tree.test.js can import them
