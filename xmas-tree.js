@@ -14,23 +14,29 @@ function xmasTree(foliageHeight) {
 }
 
 function findLineWidth(foliageHeight) {
-  return (2 * foliageHeight) - 1
+  return (2 * foliageHeight) - 1;
 }
 
 function makeFoliageSegment(foliageHeight, segmentLevel) {
   let underscore = "_".repeat((findLineWidth(foliageHeight) - findLineWidth(segmentLevel))/2);
   let hashtag = "#".repeat(findLineWidth(segmentLevel));
-  return underscore + hashtag + underscore
+  return underscore + hashtag + underscore;
 }
 
 function makeTreeFoliage(foliageHeight) {
-  // your code here
+  let tree = [];
+  for (level = 1; level < foliageHeight + 1; level++) {
+    tree.push(makeFoliageSegment(foliageHeight, level));
+  }
+  return tree;
 }
 
 function makeTreeTrunk(foliageHeight) {
-  return ["____#____", "____#____"];
+  return [makeFoliageSegment(foliageHeight, 1),makeFoliageSegment(foliageHeight, 1)]
 }
 
+
+// One # for each level and _ is equal to line width - 1
 // exports the functions so that ./xmas-tree.test.js can import them
 module.exports = {
   xmasTree,
